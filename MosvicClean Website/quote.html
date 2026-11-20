@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Request a Quote — Brightline Facility Care</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header">
+
+    <a href="quote.html" class="notice-bar">
+      Request a Quote!
+    </a>
+
+
+    <div class="title-bar">
+
+      <div class="left-group">
+
+        <a href="index.html" class="brand">
+          <img src="../images/logo.png" alt="Brightline Facility Care">
+        </a>
+
+
+        <nav class="main-nav">
+
+          <div class="nav-item" data-menu="services">
+            Services
+            <span class="chev">&#9662;</span>
+          </div>
+
+
+          <div class="nav-item" data-menu="resources">
+            Resources
+            <span class="chev">&#9662;</span>
+          </div>
+
+
+          <a href="quote.html" class="nav-item">
+            Contact us
+          </a>
+
+        </nav>
+
+      </div>
+
+
+      <div class="header-right">
+
+        <a href="tel:8885550100" class="phone-link">
+          (888) 555-0100
+        </a>
+
+
+        <a href="../resources/faq.html" class="faq-btn">
+          ?
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- SERVICES MENU -->
+
+    <div class="mega-panel" id="mega-services">
+
+      <div class="mega-panel-inner">
+
+
+        <div class="mega-col">
+
+          <div class="mega-col-label">
+            Cleaning Services
+          </div>
+
+
+          <a href="services/janitorial.html">
+            General Janitorial
+          </a>
+
+
+          <a href="services/window-cleaning.html">
+            Window & Glass Cleaning
+          </a>
+
+
+          <a href="services/move-in-out.html">
+            Move In / Out Cleaning
+          </a>
+
+
+          <a href="services/porter.html">
+            Porter Services
+          </a>
+
+        </div>
+
+
+        <div class="mega-col">
+
+          <div class="mega-col-label">
+            Industries
+          </div>
+
+
+          <a href="services/healthcare.html">
+            Healthcare
+          </a>
+
+
+          <a href="services/commercial.html">
+            Commercial
+          </a>
+
+
+          <a href="services/educational.html">
+            Educational
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RESOURCES MENU -->
+
+    <div class="mega-panel" id="mega-resources">
+
+      <div class="mega-panel-inner">
+
+
+        <div class="mega-col">
+
+          <div class="mega-col-label">
+            About
+          </div>
+
+
+          <a href="resources/about.html">
+            Who are we
+          </a>
+
+
+          <a href="resources/faq.html">
+            FAQs
+          </a>
+
+        </div>
+
+
+        <div class="mega-col">
+
+          <div class="mega-col-label">
+            Help
+          </div>
+
+
+          <a href="resources/support.html">
+            Support
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section
+      class="quote-hero"
+      style="
+        background-image:
+        url('https://picsum.photos/seed/brightline-quote/1920/1000');
+      "
+    >
+
+      <div class="quote-hero-overlay"></div>
+
+
+      <div class="quote-hero-inner">
+
+        <div class="quote-hero-content reveal from-left">
+
+          <span class="eyebrow">
+            Let's get started
+          </span>
+
+
+          <h1>
+            Request a Quote
+          </h1>
+
+
+          <p>
+            Tell us a little about your facility and the
+            services you're looking for. We'll use your
+            information to better understand how we can help.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUOTE FORM
+         ===================================================== -->
+
+    <section class="quote-section">
+
+
+      <div class="quote-layout">
+
+
+        <!-- FORM INTRO -->
+
+        <div class="quote-form-intro reveal from-left">
+
+          <span class="eyebrow">
+            Get in touch
+          </span>
+
+
+          <h2>
+            Let's talk about your facility.
+          </h2>
+
+
+          <p>
+            Complete the form and a member of our team can
+            review your needs and discuss the best service
+            options for your space.
+          </p>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form
+          class="quote-form reveal from-right"
+          action="#"
+          method="post"
+        >
+
+
+          <!-- CONTACT INFORMATION -->
+
+          <div class="form-group">
+
+            <h3>
+              Contact Information
+            </h3>
+
+
+            <div class="form-row">
+
+              <div class="form-field">
+
+                <label for="first-name">
+                  First Name
+                </label>
+
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  placeholder="First name"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="last-name">
+                  Last Name
+                </label>
+
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  placeholder="Last name"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-field">
+
+                <label for="email">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="phone">
+                  Phone
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(000) 000-0000"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- FACILITY INFORMATION -->
+
+          <div class="form-group">
+
+            <h3>
+              Facility Information
+            </h3>
+
+
+            <div class="form-field">
+
+              <label for="company">
+                Company / Organization
+              </label>
+
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Company name"
+              >
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-field">
+
+                <label for="facility-type">
+                  Facility Type
+                </label>
+
+                <select
+                  id="facility-type"
+                  name="facility-type"
+                >
+
+                  <option value="">
+                    Select a facility type
+                  </option>
+
+                  <option value="commercial">
+                    Commercial
+                  </option>
+
+                  <option value="healthcare">
+                    Healthcare
+                  </option>
+
+                  <option value="education">
+                    Education
+                  </option>
+
+                  <option value="other">
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="facility-size">
+                  Approximate Facility Size
+                </label>
+
+                <input
+                  type="text"
+                  id="facility-size"
+                  name="facility-size"
+                  placeholder="e.g. 10,000 sq. ft."
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- SERVICES -->
+
+          <div class="form-group">
+
+            <h3>
+              Services Needed
+            </h3>
+
+
+            <div class="service-options">
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  name="services"
+                  value="janitorial"
+                >
+
+                <span>
+                  General Janitorial
+                </span>
+
+              </label>
+
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  name="services"
+                  value="porter"
+                >
+
+                <span>
+                  Porter Services
+                </span>
+
+              </label>
+
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  name="services"
+                  value="move-in-out"
+                >
+
+                <span>
+                  Move In / Out Cleaning
+                </span>
+
+              </label>
+
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  name="services"
+                  value="windows"
+                >
+
+                <span>
+                  Window & Glass Cleaning
+                </span>
+
+              </label>
+
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  name="services"
+                  value="other"
+                >
+
+                <span>
+                  Other
+                </span>
+
+              </label>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- MESSAGE -->
+
+          <div class="form-group">
+
+            <h3>
+              Tell Us More
+            </h3>
+
+
+            <div class="form-field">
+
+              <label for="message">
+                How can we help?
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Tell us about your cleaning needs..."
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+
+          <button
+            type="submit"
+            class="btn btn-primary quote-submit"
+          >
+            Submit Request
+          </button>
+
+
+          <p class="form-note">
+            This form is currently for demonstration purposes.
+          </p>
+
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHAT TO EXPECT
+         ===================================================== -->
+
+    <section class="quote-process">
+
+
+      <div class="quote-process-header reveal from-center-l">
+
+        <span class="eyebrow">
+          What happens next
+        </span>
+
+
+        <h2>
+          From request to service.
+        </h2>
+
+
+        <p>
+          Once we receive your request, we'll use the
+          information you've provided to better understand
+          your needs and determine the next steps.
+        </p>
+
+      </div>
+
+
+
+      <div class="quote-process-grid">
+
+
+        <div class="quote-process-step reveal from-left">
+
+          <span class="quote-step-number">
+            01
+          </span>
+
+
+          <h3>
+            Tell Us About Your Needs
+          </h3>
+
+
+          <p>
+            Share some basic information about your facility,
+            the services you're interested in, and what you're
+            looking for.
+          </p>
+
+        </div>
+
+
+
+        <div class="quote-process-step reveal from-center-l">
+
+          <span class="quote-step-number">
+            02
+          </span>
+
+
+          <h3>
+            We'll Review Your Request
+          </h3>
+
+
+          <p>
+            Our team will look over the information and
+            determine what details may be needed to better
+            understand your project.
+          </p>
+
+        </div>
+
+
+
+        <div class="quote-process-step reveal from-right">
+
+          <span class="quote-step-number">
+            03
+          </span>
+
+
+          <h3>
+            Discuss Your Options
+          </h3>
+
+
+          <p>
+            We'll connect with you to discuss your needs and
+            the services that may be the right fit for your
+            facility.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+
+      <div class="footer-col reveal from-left">
+
+        <h4>
+          About us
+        </h4>
+
+
+        <a href="resources/about.html">
+          Who are we
+        </a>
+
+
+        <a href="resources/faq.html">
+          FAQs
+        </a>
+
+      </div>
+
+
+
+      <div class="footer-col reveal from-center-l">
+
+        <h4>
+          Find us
+        </h4>
+
+
+        <p>
+          1200 Harbor Way, Suite 220
+        </p>
+
+
+        <p>
+          Riverside, CA 92501
+        </p>
+
+      </div>
+
+
+
+      <div class="footer-col reveal from-center-r">
+
+        <h4>
+          Contact us
+        </h4>
+
+
+        <a href="mailto:hello@brightline.com">
+          hello@brightline.com
+        </a>
+
+
+        <a href="tel:8885550100">
+          (888) 555-0100
+        </a>
+
+      </div>
+
+
+
+      <div class="footer-col reveal from-right">
+
+        <h4>
+          Information
+        </h4>
+
+
+        <a href="resources/support.html">
+          Support
+        </a>
+
+
+        <a href="resources/faq.html">
+          FAQs
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <span>
+        &copy; 2026 Brightline Facility Care
+      </span>
+
+
+      <span>
+        Placeholder content — swap before launch
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2251 @@
+
+:root{
+  --ink:#1E2238;
+  --ink-soft:#131c30;
+  --accent:#3D93BE;
+  --accent-deep:#2B4478;
+  --sky:#7EC1DE;
+  --pale:#C7D0E8;
+  --paper:#EEF2FA;
+  --paper-2:#FFFFFF;
+  --footer-bg:#3F4A63;
+  --line:rgba(30,34,56,0.12);
+  --shadow:0 12px 32px rgba(30,34,56,0.14);
+  --radius:14px;
+
+  font-family:'Inter', sans-serif;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,
+body{
+  width:100%;
+  max-width:100%;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:transparent;
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+h1,
+h2,
+h3,
+h4{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+ul{
+  list-style:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--accent-deep);
+  display:inline-block;
+  margin-bottom:14px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.notice-bar{
+  display:block;
+  width:100%;
+  background:var(--accent);
+  color:#fff;
+  text-align:center;
+  font-weight:600;
+  font-size:14px;
+  padding:13px 16px;
+  transition:background .18s ease;
+}
+
+.notice-bar:hover{
+  background:var(--accent-deep);
+}
+
+
+header.site-header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  width:100%;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+
+
+.title-bar{
+  width:100%;
+  max-width:1440px;
+  margin:0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:16px 40px;
+}
+
+
+.left-group{
+  display:flex;
+  align-items:center;
+  gap:36px;
+}
+
+
+.brand{
+  font-family:'Fraunces', serif;
+  font-size:20px;
+  font-weight:600;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+
+.brand-mark{
+  width:30px;
+  height:30px;
+  border-radius:8px;
+
+  background:linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-deep)
+  );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+  font-size:15px;
+  font-weight:600;
+}
+
+
+nav.main-nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+
+.nav-item{
+  position:relative;
+
+  font-size:14.5px;
+  font-weight:500;
+
+  display:flex;
+  align-items:center;
+  gap:5px;
+
+  padding:10px 0;
+
+  cursor:pointer;
+
+  color:var(--ink-soft);
+  user-select:none;
+}
+
+
+.nav-item:hover{
+  color:var(--accent-deep);
+}
+
+.nav-item.open{
+  color:var(--accent-deep);
+}
+
+
+.nav-item .chev{
+  transition:transform .2s ease;
+  font-size:11px;
+}
+
+.nav-item:hover .chev{
+  transform:rotate(180deg);
+}
+
+.nav-item.open .chev{
+  transform:rotate(180deg);
+}
+
+
+/* =========================================================
+   MEGA MENUS
+   ========================================================= */
+
+.mega-panel{
+  position:absolute;
+
+  left:0;
+  right:0;
+  top:100%;
+
+  width:100%;
+
+  background:var(--paper-2);
+
+  border-top:1px solid var(--line);
+
+  box-shadow:var(--shadow);
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(8px);
+
+  transition:
+    opacity .18s ease,
+    transform .18s ease;
+
+  z-index:99;
+}
+
+
+.mega-panel.open{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+
+.mega-panel-inner{
+  max-width:520px;
+  margin:0 auto;
+
+  padding:36px 40px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+}
+
+
+.mega-col-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+
+  color:var(--accent-deep);
+
+  margin-bottom:12px;
+}
+
+
+.mega-col a{
+  display:block;
+
+  font-size:14px;
+  color:var(--ink-soft);
+
+  padding:7px 0;
+
+  font-weight:400;
+}
+
+
+.mega-col a:hover{
+  color:var(--accent-deep);
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+   ========================================================= */
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+
+.phone-link{
+  font-size:14px;
+  font-weight:600;
+  color:var(--ink);
+}
+
+
+.faq-btn{
+  font-size:15px;
+  font-weight:600;
+  color:var(--ink-soft);
+}
+
+
+/* =========================================================
+   BACKGROUND PHOTO
+   ========================================================= */
+
+.brand img {
+  display: block;
+  width: 240px;
+  height: 70px;
+}
+
+
+.bg-photo{
+  position:fixed;
+
+  inset:0;
+
+  z-index:-2;
+
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(30,34,56,0.6) 0,
+      rgba(30,34,56,0.38) 60vh,
+      rgba(238,242,250,0.94) 100vh,
+      rgba(238,242,250,0.97) 100%
+    ),
+    url('images/Hero.png');
+
+  background-size:cover;
+  background-position:center top;
+  background-attachment:fixed;
+}
+
+
+main{
+  position:relative;
+  width:100%;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal{
+  opacity:0;
+
+  transition:
+    opacity .8s cubic-bezier(.22,.61,.36,1),
+    transform .8s cubic-bezier(.22,.61,.36,1);
+}
+
+.reveal.from-left{
+  transform:translateX(-56px);
+}
+
+.reveal.from-right{
+  transform:translateX(56px);
+}
+
+.reveal.from-center-l{
+  transform:translateX(-40px);
+}
+
+.reveal.from-center-r{
+  transform:translateX(40px);
+}
+
+.reveal.is-visible{
+  opacity:1;
+  transform:translateX(0);
+}
+
+
+@media (prefers-reduced-motion:reduce){
+
+  .reveal{
+    transition:none;
+    opacity:1;
+    transform:none;
+  }
+
+}
+
+
+/* =========================================================
+   HOMEPAGE HERO
+   ========================================================= */
+
+.hero{
+  width:100%;
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+}
+
+
+.hero-inner{
+  width:100%;
+  max-width:1440px;
+
+  margin:0 auto;
+
+  padding:0 40px;
+}
+
+
+.hero-inner h1{
+  font-size:clamp(34px,5vw,54px);
+  line-height:1.05;
+
+  color:#fff;
+
+  margin-bottom:20px;
+
+  max-width:640px;
+}
+
+
+.hero-inner p{
+  color:rgba(255,255,255,0.86);
+
+  font-size:16.5px;
+
+  margin-bottom:30px;
+
+  max-width:460px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:13px 24px;
+
+  border-radius:999px;
+
+  font-size:14.5px;
+  font-weight:600;
+
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+
+  box-shadow:
+    0 10px 24px rgba(61,147,190,0.4);
+}
+
+
+/* =========================================================
+   SECTION BANDS
+   ========================================================= */
+
+.section-band{
+  width:100%;
+
+  background:var(--paper-2);
+
+  padding:70px 40px;
+
+  text-align:center;
+}
+
+
+.section-inner{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+
+.section-head{
+  max-width:600px;
+
+  margin:0 auto 48px;
+
+  text-align:center;
+}
+
+
+.section-head h2{
+  font-size:clamp(26px,3.4vw,36px);
+}
+
+
+.section-head p{
+  color:var(--ink-soft);
+
+  font-size:15.5px;
+
+  margin-top:10px;
+}
+
+
+/* =========================================================
+   HOMEPAGE INDUSTRY CARDS
+   ========================================================= */
+
+.services-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:40px;
+}
+
+
+.service-card{
+  text-align:center;
+}
+
+
+.service-image{
+  width:100%;
+
+  aspect-ratio:4 / 3;
+
+  border-radius:var(--radius);
+
+  background-size:cover;
+  background-position:center;
+
+  box-shadow:
+    0 16px 36px rgba(30,34,56,0.22);
+
+  margin-bottom:22px;
+
+  transition:
+    box-shadow .25s ease,
+    transform .25s ease;
+}
+
+
+.service-card:hover .service-image{
+  box-shadow:
+    0 22px 46px rgba(30,34,56,0.32);
+
+  transform:translateY(-4px);
+}
+
+
+.service-title{
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  font-size:19px;
+
+  color:var(--ink);
+
+  transition:
+    color .2s ease,
+    gap .2s ease;
+}
+
+
+.service-title .arrow{
+  transition:transform .2s ease;
+}
+
+
+.service-card:hover .service-title{
+  color:var(--accent);
+}
+
+
+.service-card:hover .service-title .arrow{
+  transform:translateX(5px);
+}
+
+
+/* =========================================================
+   INDUSTRY PAGE HERO
+   Used by:
+   healthcare.html
+   commercial.html
+   educational.html
+   ========================================================= */
+
+.industry-hero{
+  width:100%;
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  position:relative;
+
+  background-size:cover;
+  background-position:center;
+}
+
+
+.industry-hero::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(30,34,56,0.72) 0%,
+      rgba(30,34,56,0.48) 45%,
+      rgba(30,34,56,0.18) 100%
+    );
+}
+
+
+.industry-hero-inner{
+  width:100%;
+  max-width:1440px;
+
+  margin:0 auto;
+
+  padding:0 40px;
+
+  position:relative;
+  z-index:1;
+}
+
+
+.industry-hero-content{
+  max-width:600px;
+}
+
+
+.industry-hero h1{
+  font-size:clamp(38px,5vw,58px);
+
+  line-height:1.05;
+
+  color:#fff;
+
+  margin-bottom:20px;
+}
+
+
+.industry-hero p{
+  color:rgba(255,255,255,0.88);
+
+  font-size:17px;
+
+  max-width:500px;
+
+  margin-bottom:30px;
+}
+
+
+/* =========================================================
+   INDUSTRY CONTENT ROWS
+   ========================================================= */
+
+.industry-content{
+  width:100%;
+
+  background:var(--paper-2);
+}
+
+
+.industry-row{
+  width:100%;
+  max-width:1200px;
+
+  margin:0 auto;
+
+  padding:90px 40px;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  align-items:center;
+
+  gap:80px;
+}
+
+
+.industry-row + .industry-row{
+  border-top:1px solid var(--line);
+}
+
+
+/* IMAGE */
+
+.industry-row-image{
+  width:100%;
+
+  aspect-ratio:4 / 3;
+
+  border-radius:var(--radius);
+
+  background-size:cover;
+  background-position:center;
+
+  box-shadow:
+    0 16px 36px rgba(30,34,56,0.18);
+}
+
+
+/* TEXT */
+
+.industry-row-text{
+  max-width:480px;
+}
+
+
+.industry-row-text .eyebrow{
+  margin-bottom:10px;
+}
+
+
+.industry-row-text h2{
+  font-size:clamp(25px,3vw,34px);
+
+  line-height:1.15;
+
+  margin-bottom:16px;
+}
+
+
+.industry-row-text p{
+  color:var(--ink-soft);
+
+  font-size:15.5px;
+
+  line-height:1.75;
+}
+
+
+/* =========================================================
+   ROW ALIGNMENTS
+   ========================================================= */
+
+/*
+   ROW 1
+   Text LEFT
+   Image RIGHT
+*/
+
+.industry-row.row-image-right .industry-row-text{
+  order:1;
+}
+
+.industry-row.row-image-right .industry-row-image{
+  order:2;
+}
+
+
+/*
+   ROW 2
+   Image LEFT
+   Text RIGHT
+*/
+
+.industry-row.row-image-left .industry-row-image{
+  order:1;
+}
+
+.industry-row.row-image-left .industry-row-text{
+  order:2;
+}
+
+
+/*
+   ROW 3
+   Text LEFT
+   Image RIGHT
+*/
+
+.industry-row.row-image-right:nth-of-type(odd)
+.industry-row-text{
+  order:1;
+}
+
+
+/* =========================================================
+   INDUSTRY CTA
+   ========================================================= */
+
+.industry-cta{
+  width:100%;
+
+  background:var(--paper);
+
+  padding:75px 40px;
+
+  text-align:center;
+}
+
+
+.industry-cta-inner{
+  max-width:700px;
+
+  margin:0 auto;
+}
+
+
+.industry-cta h2{
+  font-size:clamp(26px,3.4vw,38px);
+
+  margin-bottom:24px;
+}
+
+
+.industry-cta p{
+  color:var(--ink-soft);
+
+  font-size:15.5px;
+
+  margin-bottom:28px;
+}
+
+
+/* =========================================================
+   TRUST BAR
+   ========================================================= */
+
+.logo-row{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:28px;
+
+  padding:26px 0 50px;
+
+  border-bottom:1px solid var(--line);
+
+  margin-bottom:50px;
+}
+
+
+.logo-chip{
+  width:130px;
+  height:50px;
+
+  border-radius:8px;
+
+  overflow:hidden;
+
+  opacity:.6;
+
+  filter:grayscale(1);
+
+  transition:
+    opacity .2s ease,
+    filter .2s ease;
+}
+
+
+.logo-chip:hover{
+  opacity:1;
+  filter:grayscale(.4);
+}
+
+
+.logo-chip img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+
+/* =========================================================
+   TESTIMONIAL CAROUSEL
+   ========================================================= */
+
+.carousel{
+  position:relative;
+
+  max-width:720px;
+
+  margin:0 auto;
+
+  text-align:center;
+
+  min-height:200px;
+}
+
+
+.carousel-track{
+  position:relative;
+  height:200px;
+}
+
+
+.testimonial{
+  position:absolute;
+  inset:0;
+
+  opacity:0;
+
+  transition:opacity .6s ease;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+}
+
+
+.testimonial.active{
+  opacity:1;
+}
+
+
+.testimonial .client-logo{
+  font-family:'IBM Plex Mono', monospace;
+
+  font-size:12px;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+  color:var(--accent-deep);
+
+  background:rgba(61,147,190,0.12);
+
+  padding:7px 18px;
+
+  border-radius:8px;
+
+  margin-bottom:20px;
+}
+
+
+.testimonial p.quote{
+  font-family:'Fraunces', serif;
+
+  font-size:19px;
+
+  color:var(--ink);
+
+  max-width:600px;
+
+  margin-bottom:14px;
+}
+
+
+.testimonial .who{
+  font-size:13.5px;
+  color:var(--ink-soft);
+}
+
+
+.dots{
+  display:flex;
+
+  gap:7px;
+
+  justify-content:center;
+
+  margin-top:18px;
+}
+
+
+.dot{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:var(--line);
+
+  transition:
+    background .3s ease,
+    width .3s ease;
+}
+
+
+.dot.active{
+  background:var(--accent-deep);
+
+  width:20px;
+
+  border-radius:4px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  width:100%;
+  background:var(--footer-bg);
+}
+
+
+.footer-grid{
+  max-width:1200px;
+
+  margin:0 auto;
+
+  padding:60px 40px 40px;
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:32px;
+}
+
+
+.footer-col h4{
+  font-size:14px;
+
+  margin-bottom:16px;
+
+  color:#fff;
+}
+
+
+.footer-col a,
+.footer-col p{
+  display:block;
+
+  font-size:14px;
+
+  color:rgba(255,255,255,0.78);
+
+  padding:5px 0;
+}
+
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+
+.footer-bottom{
+  max-width:1200px;
+
+  margin:0 auto;
+
+  padding:20px 40px 32px;
+
+  font-size:13px;
+
+  color:rgba(255,255,255,0.7);
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:6px;
+
+  text-align:center;
+
+  border-top:1px solid rgba(255,255,255,0.14);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width:860px){
+
+  nav.main-nav{
+    display:none;
+  }
+
+
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+
+  /* INDUSTRY PAGES */
+
+  .industry-row{
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+    padding:65px 30px;
+  }
+
+
+  .industry-row-image{
+    order:1 !important;
+  }
+
+
+  .industry-row-text{
+    order:2 !important;
+
+    max-width:none;
+  }
+
+
+  .industry-hero-inner{
+    padding:0 30px;
+  }
+
+
+  .industry-hero-content{
+    max-width:100%;
+  }
+
+
+  .industry-cta{
+    padding:60px 30px;
+  }
+
+}
+
+
+@media (max-width:520px){
+
+  .title-bar{
+    padding:14px 20px;
+  }
+
+
+  .header-right .phone-link{
+    display:none;
+  }
+
+
+  .hero-inner{
+    padding:0 25px;
+  }
+
+
+  .industry-hero-inner{
+    padding:0 25px;
+  }
+
+
+  .industry-row{
+    padding:55px 25px;
+  }
+
+
+  .footer-grid{
+    grid-template-columns:1fr;
+
+    padding-left:25px;
+    padding-right:25px;
+  }
+
+
+  .footer-bottom{
+    padding-left:25px;
+    padding-right:25px;
+  }
+
+}
+
+/* =========================================================
+   PORTER SERVICES
+   ========================================================= */
+
+.porter-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.porter-benefits li {
+  margin-bottom: 1rem;
+
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.porter-benefits li::before {
+  content: "—";
+  margin-right: 0.8rem;
+}
+
+/* =========================================================
+   BEFORE & AFTER CAROUSEL
+   ========================================================= */
+
+.before-after-section {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+
+  text-align: center;
+}
+
+.before-after-header {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.before-after-header h2 {
+  margin: 0.5rem 0 1rem;
+
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.before-after-header p {
+  margin: 0 auto;
+
+  max-width: 600px;
+
+  line-height: 1.7;
+}
+
+
+/* CAROUSEL */
+
+.before-after-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* Each before/after pair */
+
+.before-after-slide {
+  display: none;
+
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  width: 100%;
+}
+
+.before-after-slide.active {
+  display: grid;
+}
+
+
+/* Images */
+
+.before-after-image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+}
+
+.before-after-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* BEFORE / AFTER label */
+
+.before-after-label {
+  position: absolute;
+
+  left: 1rem;
+  bottom: 1rem;
+
+  padding: 0.45rem 0.8rem;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  color: white;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* CONTROLS */
+
+.before-after-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+}
+
+
+/* Arrow buttons */
+
+.before-after-prev,
+.before-after-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid currentColor;
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 1.2rem;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.before-after-prev:hover,
+.before-after-next:hover {
+  background: currentColor;
+  color: white;
+}
+
+
+/* Dots */
+
+.before-after-dots {
+  display: flex;
+  align-items: center;
+
+  gap: 0.6rem;
+}
+
+.before-after-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: currentColor;
+
+  opacity: 0.35;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.before-after-dot.active {
+  opacity: 1;
+
+  transform: scale(1.35);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .before-after-section {
+    padding: 5rem 1.25rem 3rem;
+  }
+
+  .before-after-slide {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .before-after-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .before-after-controls {
+    gap: 1rem;
+  }
+
+}
+
+/* =========================================================
+   ABOUT / WHO WE ARE
+   ========================================================= */
+
+.about-section {
+  padding: 8rem 2rem;
+}
+
+.about-intro {
+  max-width: 850px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.about-intro h2 {
+  margin: 0.5rem 0 2rem;
+
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.about-intro p {
+  max-width: 750px;
+  margin: 0 auto 1.5rem;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CORE VALUES
+   ========================================================= */
+
+.about-values {
+  padding: 8rem 2rem;
+
+  background: #f5f3ee;
+}
+
+.about-values-header {
+  max-width: 800px;
+
+  margin: 0 auto 4rem;
+
+  text-align: center;
+}
+
+.about-values-header h2 {
+  margin: 0.5rem 0 1rem;
+
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.about-values-header p {
+  line-height: 1.7;
+}
+
+
+/* VALUES GRID */
+
+.values-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1.5rem;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+.value-box {
+  padding: 2.5rem 2rem;
+
+  text-align: center;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+
+  background: transparent;
+}
+
+.value-box h3 {
+  margin: 0 0 1rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: 1.6rem;
+}
+
+.value-box p {
+  margin: 0;
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HISTORY
+   ========================================================= */
+
+.about-history {
+  padding: 8rem 2rem;
+}
+
+.about-history-inner {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.about-history-inner h2 {
+  margin: 0.5rem 0 2rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1.1;
+}
+
+.about-history-inner p {
+  max-width: 750px;
+
+  margin: 0 auto 1.5rem;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .about-section,
+  .about-values,
+  .about-history {
+    padding: 5rem 1.25rem;
+  }
+
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .value-box {
+    padding: 2rem 1.5rem;
+  }
+
+}
+
+/* =========================================================
+   FAQ PAGE
+   ========================================================= */
+
+.faq-hero {
+  position: relative;
+
+  min-height: 70vh;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+}
+
+.faq-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.faq-hero-inner {
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 8rem 2rem;
+}
+
+.faq-hero-content {
+  max-width: 700px;
+
+  color: white;
+}
+
+.faq-hero-content h1 {
+  margin: 0 0 1.5rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+
+  line-height: 1;
+}
+
+.faq-hero-content p {
+  max-width: 550px;
+
+  margin-bottom: 2rem;
+
+  font-size: 1.1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FAQ CONTENT
+   ========================================================= */
+
+.faq-content {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 8rem 2rem;
+}
+
+.faq-intro {
+  max-width: 750px;
+
+  margin: 0 auto 6rem;
+
+  text-align: center;
+}
+
+.faq-intro h2 {
+  margin: 0.5rem 0 1.5rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1.1;
+}
+
+.faq-intro p {
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FAQ CATEGORY
+   ========================================================= */
+
+.faq-category {
+  margin-bottom: 5rem;
+}
+
+.faq-category > h3 {
+  margin-bottom: 1.5rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: 2rem;
+}
+
+
+/* =========================================================
+   FAQ ITEMS
+   ========================================================= */
+
+.faq-list {
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+
+/* QUESTION */
+
+.faq-item summary {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  padding: 1.5rem 0;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  font-size: 1.05rem;
+
+  font-weight: 500;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary span {
+  flex-shrink: 0;
+
+  font-size: 1.5rem;
+
+  font-weight: 400;
+
+  transition: transform 0.25s ease;
+}
+
+
+/* OPEN STATE */
+
+.faq-item[open] summary span {
+  transform: rotate(45deg);
+}
+
+
+/* ANSWER */
+
+.faq-answer {
+  max-width: 800px;
+
+  padding: 0 3rem 1.5rem 0;
+}
+
+.faq-answer p {
+  margin: 0;
+
+  line-height: 1.8;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   FAQ CTA
+   ========================================================= */
+
+.faq-cta {
+  padding: 7rem 2rem;
+
+  text-align: center;
+
+  background: #f5f3ee;
+}
+
+.faq-cta h2 {
+  margin: 0.5rem 0 1rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.faq-cta p {
+  max-width: 550px;
+
+  margin: 0 auto 2rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .faq-hero-inner {
+    padding: 6rem 1.25rem;
+  }
+
+  .faq-content {
+    padding: 5rem 1.25rem;
+  }
+
+  .faq-intro {
+    margin-bottom: 4rem;
+  }
+
+  .faq-category {
+    margin-bottom: 4rem;
+  }
+
+  .faq-item summary {
+    padding: 1.25rem 0;
+
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding-right: 1rem;
+  }
+
+  .faq-cta {
+    padding: 5rem 1.25rem;
+  }
+
+}
+
+/* =========================================================
+   REQUEST A QUOTE PAGE
+   ========================================================= */
+
+.quote-hero {
+  position: relative;
+
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.quote-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.quote-hero-inner {
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 8rem 2rem;
+}
+
+.quote-hero-content {
+  max-width: 750px;
+
+  color: white;
+}
+
+.quote-hero-content h1 {
+  margin: 0.5rem 0 1.5rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+
+  line-height: 1;
+}
+
+.quote-hero-content p {
+  max-width: 600px;
+
+  font-size: 1.1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   QUOTE FORM SECTION
+   ========================================================= */
+
+.quote-section {
+  padding: 8rem 2rem;
+}
+
+.quote-layout {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 6rem;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* LEFT SIDE */
+
+.quote-form-intro {
+  position: sticky;
+
+  top: 8rem;
+
+  align-self: start;
+}
+
+.quote-form-intro h2 {
+  margin: 0.5rem 0 1.5rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(2.5rem, 4vw, 4rem);
+
+  line-height: 1.1;
+}
+
+.quote-form-intro p {
+  max-width: 500px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.quote-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 3rem;
+}
+
+.form-group h3 {
+  margin: 0 0 1.5rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: 1.6rem;
+}
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1.25rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.5rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+
+  padding: 0.9rem 1rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.25);
+
+  background: transparent;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+
+  min-height: 150px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: currentColor;
+
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   SERVICE CHECKBOXES
+   ========================================================= */
+
+.service-options {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0.8rem;
+}
+
+.checkbox-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  padding: 1rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.checkbox-option:hover {
+  border-color: currentColor;
+}
+
+.checkbox-option input {
+  width: 17px;
+  height: 17px;
+}
+
+.checkbox-option span {
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.quote-submit {
+  margin-top: 0.5rem;
+}
+
+.form-note {
+  margin-top: 1rem;
+
+  font-size: 0.75rem;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   WHAT TO EXPECT
+   ========================================================= */
+
+.quote-process {
+  padding: 8rem 2rem;
+
+  background: #f5f3ee;
+}
+
+.quote-process-header {
+  max-width: 750px;
+
+  margin: 0 auto 5rem;
+
+  text-align: center;
+}
+
+.quote-process-header h2 {
+  margin: 0.5rem 0 1rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 1.1;
+}
+
+.quote-process-header p {
+  line-height: 1.8;
+}
+
+
+/* PROCESS GRID */
+
+.quote-process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.quote-process-step {
+  padding: 2.5rem 2rem;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.quote-step-number {
+  display: block;
+
+  margin-bottom: 2rem;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.1em;
+}
+
+.quote-process-step h3 {
+  margin: 0 0 1rem;
+
+  font-family: "Fraunces", serif;
+
+  font-size: 1.6rem;
+}
+
+.quote-process-step p {
+  margin: 0;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .quote-layout {
+    grid-template-columns: 1fr;
+
+    gap: 4rem;
+  }
+
+  .quote-form-intro {
+    position: static;
+  }
+
+  .quote-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .quote-hero-inner {
+    padding: 6rem 1.25rem;
+  }
+
+  .quote-section {
+    padding: 5rem 1.25rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .service-options {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-process {
+    padding: 5rem 1.25rem;
+  }
+
+}
